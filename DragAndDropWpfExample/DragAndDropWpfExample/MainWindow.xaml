@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         
+        <ListView x:Name="DragList"
+                  Grid.Column="0"
+                  PreviewMouseLeftButtonDown="List_PreviewMouseLeftButtonDown"
+                  PreviewMouseMove="List_PreviewMouseMove">
+            <ListViewItem Content="ListViewItem"/>
+            <ListViewItem Content="ListViewItem"/>
+        </ListView>
+
+        <ListView x:Name="DropList" 
+                  Grid.Column="1"
+          Drop="DropList_Drop" 
+          DragEnter="DropList_DragEnter" 
+          AllowDrop="True" />
+
     </Grid>
 </Window>
